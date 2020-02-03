@@ -53,8 +53,6 @@ command /wallet [<offline player>]:
                 send "{@prer} That player hasn't joined before!"
         else if arg-1 isn't set:
             send "{@pre} Balance: &3%{balance.%player's uuid%}%"
-        else if arg-1 is set:
-            send "{@pre} &3%arg-1%&b's Balance: &3%{balance.%arg-1's uuid%}%"
 
 command /sendcash [<player>] [<number>]:
     aliases: pay, sendmoney
@@ -62,15 +60,19 @@ command /sendcash [<player>] [<number>]:
     trigger:
         if arg-1 is set:
             if arg-2 is set:
-                if {balance.%player's uuid%} is greater than or equal to arg-2:
-                    send "{@pre} Sending &3%arg-2%&b to &3%arg-1%"
-                    send "{@pre} &3%arg-2%&b recieved from player &3%player%" to arg-1
-                    remove arg-2 from {balance.%player's uuid%}
-                    add arg-2 to {balance.%arg-1's uuid%}
+                if arg-1 isn't online:
+                    send "{@prer} That player isn't online!"
+                else:
+                    if {balance.%player's uuid%} is greater than or equal to arg-2:
+                        send "{@pre} Sending &3%arg-2%&b to &3%arg-1%"
+                        send "{@pre} &3%arg-2%&b recieved from player &3%player%" to arg-1
+                        remove arg-2 from {balance.%player's uuid%}
+                        add arg-2 to {balance.%arg-1's uuid%}
+                else:
+                    send "{@prer} /sendcash <player> <amount>"
             else:
-                send "{@prer} /sendcash <player> <amount>"
-        else:
-            send "{@prer} /sendcash <player> <amount>"
+               send "{@prer} /sendcash <player> <amount>"
+
 
 on join:
     if {balance.%player's uuid%} isn't set:
@@ -80,4 +82,4 @@ command /sunske:
     trigger:
         send "&aSunske"
         send "VERSION {@ver}"
-        send "Developed by egamer3000 - Ethan"
+        send "Developed by egamer3000 - Ethan | https://github.com/gluester/SunskeECO"
