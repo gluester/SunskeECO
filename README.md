@@ -14,4 +14,4 @@ Meet SunskeECO- an Essentials replacement!
 * In game, use the command /sk reload SunskeECO
 
 # Thanks to..
-The Minehut Community, *http://minehut.com* (Their Discord + Forums) and skUnity community *http://skunity.com* (Their Discord + Forums)
+The Minehut Community, *http://minehut.com* (Their Discord + Forums) and skUnity community *http://skunity.com* (Their Discord + Forums) and skUnitys' Parser. *https://parser.skunity.com*
