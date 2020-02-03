@@ -51,9 +51,11 @@ command /wallet [<offline player>]:
         if arg-1 hasn't played before:
             if arg-1 isn't online:
                 send "{@prer} That player hasn't joined before!"
+        
         else if arg-1 isn't set:
             send "{@pre} Balance: &3%{balance.%player's uuid%}%"
-
+        else if arg-1 is set:
+            send "{@pre} Balance: &3%{balance.%arg-1's uuid%}%"
 command /sendcash [<player>] [<number>]:
     aliases: pay, sendmoney
     permission: sunske.sendcash
