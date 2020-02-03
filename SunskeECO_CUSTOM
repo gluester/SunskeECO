@@ -1,5 +1,5 @@
 options:
-    ver: 0.01_CUSTOM
+    ver: 0.04_CUSTOM
     pre: &7[]&b Sunske&7 []&9 <><><>&b
     prer: &c[] &7Sunske &c[] &4<><><>&7
     perm: &cInsufficient permissions! Is this an error? Contact server admins!
@@ -48,14 +48,14 @@ command /wallet [<offline player>]:
     aliases: bal, balance, cash
     permission: sunske.wallet
     trigger:
-        if arg-1 hasn't played before:
-            if arg-1 isn't online:
-                send "{@prer} That player hasn't joined before!"
-        
-        else if arg-1 isn't set:
+        if arg-1 isn't set:
             send "{@pre} Balance: &3%{balance.%player's uuid%}%"
-        else if arg-1 is set:
-            send "{@pre} Balance: &3%{balance.%arg-1's uuid%}%"
+        else:
+            if arg-1 hasn't played before:
+                if arg-1 isn't online:
+                    send "{@prer} That player hasn't joined before!"
+            else:
+                send "{@pre} &3%arg-1%&b's Balance: &3%{balance.%arg-1's uuid%}
 command /sendcash [<player>] [<number>]:
     aliases: pay, sendmoney
     permission: sunske.sendcash
