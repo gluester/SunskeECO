@@ -1,3 +1,5 @@
+![](https://github.com/gluester/SunskeECO/blob/master/SunskeEcoLogo.png)
+
 # SunskeECO
 **W.I.P**
 Meet SunskeECO- an Essentials replacement!
