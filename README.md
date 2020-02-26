@@ -1,5 +1,6 @@
 ![](https://github.com/gluester/SunskeECO/blob/master/SunskeEcoLogo.png)
-
+# I WILL NO LONGER WORK ON THIS!
+Keep in mind, there is a fatal error involving /sendcash that allows people to do /sendcash <player> -amount, and remove anything from someone's balance.
 # SunskeECO
 **W.I.P**
 Meet SunskeECO- an Essentials replacement!
