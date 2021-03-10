@@ -1,5 +1,5 @@
 options:
-    ver: 0.07_CUSTOM
+    ver: 0.08_CUSTOM
     pre: &7[]&b Sunske&7 []&9 <><><>&b
     prer: &c[] &7Sunske &c[] &4<><><>&7
     perm: &cInsufficient permissions! Is this an error? Contact server admins!
@@ -45,7 +45,7 @@ command /moneycontrol [<offline player>] [<text>] [<number>]:
                 send "{@pre} /moneycontrol help"
 
 command /wallet [<offline player>]:
-    aliases: bal, balance, cash
+    aliases: bal, balance, cash, coins, money
     permission: sunske.wallet
     permission message: {@prer} {@perm}
     trigger:
@@ -59,7 +59,7 @@ command /wallet [<offline player>]:
                 send "{@pre} &3%arg-1%&b's Balance: &3%{balance.%arg-1's uuid%}%"
         else:
             send "{@pre} &3Your&b's Balance: &3%{balance.%player's uuid%}%"
-command /sendcash [<player>] [<number>]:
+command /sendcash [<player>] [<integer>]:
     aliases: pay, sendmoney
     permission: sunske.sendcash
     permission message: {@prer} {@perm}
@@ -68,6 +68,8 @@ command /sendcash [<player>] [<number>]:
             if arg-2 is set:
                 if arg-1 isn't online:
                     send "{@prer} That player isn't online!"
+                else if arg 2 contains "-":
+                    send "{@pre} You can't send negitive money!"
                 else:
                     if {balance.%player's uuid%} is greater than or equal to arg-2:
                         send "{@pre} Sending &3%arg-2%&b to &3%arg-1%"
